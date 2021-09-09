@@ -177,16 +177,35 @@ while(playAgain){
 				break;
 			}
 		
-		}
+			Thread.sleep(1000);
+			System.out.println("Would you like to Hit (h) or Stand (s)?");
+			hitOrStand2 = scan.nextLine();
+			if (hitOrStand2.equalsIgnoreCase("h")){
+				card++;
+				Thread.sleep(1000);
+				System.out.println("Your new card is "+deck.get(shuffle.get(card)));
+        			player=((player)+(value.get(shuffle.get(card))));
+        		if(value.get(shuffle.get(card))==11&&player>21){
+                		player=player-10;
+       			}
+			Thread.sleep(1000);
+			if(player==21){
+			break;
+		}	
+			System.out.println("Your new total is "+player);
+			if(player>21){
+				break;
+			}
+		
 	
 	}
-
+	}
 	
+}
 }
 	if(player>21){
 		break;
 	}
-	else{}	
 	card++;	
 	Thread.sleep(1000);
         System.out.println("The Dealers new card is "+deck.get(shuffle.get(card)));			
@@ -201,11 +220,15 @@ while(playAgain){
 		Thread.sleep(1000);
         	System.out.println("The Dealers new card is "+deck.get(shuffle.get(card)));
         	dealer=((dealer)+(value.get(shuffle.get(card))));
+        		if(value.get(shuffle.get(card))==11&&dealer>21){
+                		dealer=dealer-10;
+       			}
 		Thread.sleep(1000);
        		System.out.println("The Dealer now has "+dealer);
 
 	}
 	break;
+
 }
 	if(dealer>21){
 		Thread.sleep(1000);
@@ -250,7 +273,8 @@ while(playAgain){
 	else{
 		playAgain=true;
 	}
- }
+ 
+}
 System.out.println("Thanks for playing, you finished with $"+bet+"!");
 }	
 }
