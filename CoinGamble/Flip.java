@@ -2,12 +2,19 @@ import java.util.*;
 import java.io.*;
 class Flip {
         public static void main(String[] args) throws Exception{
-	FileReader file = new FileReader("/home/ecoleman2/CoinGamble/HighScore.txt");
+	FileReader file = new FileReader("/home/ecoleman2/Matt-Eli-Projects/CoinGamble/HighScore.dat");
         BufferedReader reader = new BufferedReader(file);
 	Scanner scan = new Scanner(System.in);
-	String HighScore = "";
+	String HighScore="";
 	String line = reader.readLine();
-        int bet = 100;
+	File userScore = new File("/home/ecoleman2/Matt-Eli-Projects/CoinGamble/HighScore.dat");
+	FileWriter hscore = new FileWriter(userScore);
+        BufferedWriter buffw = new BufferedWriter(hscore);
+       	//	if (HighScore.equals("")){
+	//		buffw.write("Nobody:0");}
+	//	else{}
+	
+	int bet = 100;
         int amount = 0;
         String guess;
         int guess1;
@@ -70,20 +77,20 @@ class Flip {
 	else {
 	System.out.println("Sorry you're all out of money. Thanks for playing!");}
 	
-	File userScore = new File("/home/ecoleman2/CoinGamble/HighScore.txt");
-	FileWriter hscore = new FileWriter(userScore);
-	BufferedWriter buffw = new BufferedWriter(hscore);
+//	File userScore = new File("/home/ecoleman2/CoinGamble/HighScore.dat");
+//	FileWriter hscore = new FileWriter(userScore);
+//	BufferedWriter buffw = new BufferedWriter(hscore);
 
 	if (bet>Integer.parseInt((HighScore.split(":")[1]))){
 	System.out.println("Congrats, you earned a new highscore! Please enter your name!");
 	scan.nextLine();
 	String NewScore=scan.nextLine();
-	buffw.write(NewScore+":"+bet);
+	HighScore=(NewScore+":"+bet);
+	buffw.write(HighScore);
 	System.out.println("Your highscore has been set!");}
 
 	else {
-	//nothing
-	}
+	buffw.write(HighScore); }
 
 	buffw.close();
 
