@@ -3,9 +3,6 @@ class Blackjack{
 	public static void main(String[]args)throws InterruptedException{
 	long start = System.currentTimeMillis();
 	Scanner scan = new Scanner(System.in);
-	int dealer=0;
-	int player=0;
-	int card=0;
 	int bet=1000;
 	boolean newHand=true;
 	boolean playAgain=true;
@@ -75,6 +72,9 @@ class Blackjack{
 	System.out.println("House Rule #2: If you draw 21 before the dealer you automatically Win.");
 	System.out.println("House Rule #3: Wins are worth 2x your bet but a BlackJack win is worth 3x.");
 while(playAgain){
+	int player = 0;
+	int dealer = 0;
+	int card = 0;
 	System.out.println("You have $"+bet+".  How much would you like to bet?");
 	int wager = scan.nextInt();
 	scan.nextLine();
