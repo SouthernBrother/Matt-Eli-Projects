@@ -1,0 +1,13 @@
+Programming Genius
+14:13
+6:2
+down
+6:passed to method:argument
+12:named block of code:method
+16:memory address:reference
+23:8 bits:byte
+86:executes block k times:for loop
+88:stores in RAM:variable
+across
+58:fav prof:mcgregor
+92:if else:conditional
